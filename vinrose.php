@@ -54,32 +54,34 @@
 				</nav>
 			</div>
 		</div>
- <section class="contact-information padding-large bg-sand">
-    
- <div class="container">
-    <div class="col-lg-4 col-md-3 col-sm-4">
-        <p class="lineeffect">
-            <a href="#">
-                <img src="images/p2.jpg" class="img-responsive img-fill" alt="">
-            </a>
-        </p>
-    </div>
-    <div class="col-lg-4 col-md-3 col-sm-4">
-        <p class="lineeffect">
-            <a href="#">
-                <img src="images/p1.jpg" class="img-responsive img-fill" alt="">
-            </a>
-        </p>
-    </div>
-    <div class="col-lg-4 col-md-3 col-sm-4">
-        <p class="lineeffect">
-            <a href="#">
-                <img src="images/p3.jpg" class="img-responsive img-fill" alt="">
-            </a>
-        </p>
-    </div>
+ 
 </header>
 <body>
+<section class="contact-information padding-large bg-sand">
+    
+    <div class="container">
+       <div class="col-lg-4 col-md-3 col-sm-4">
+           <p class="lineeffect">
+               <a href="#">
+                   <img src="images/p2.jpg" class="img-responsive img-fill" alt="">
+               </a>
+           </p>
+       </div>
+       <div class="col-lg-4 col-md-3 col-sm-4">
+           <p class="lineeffect">
+               <a href="#">
+                   <img src="images/p1.jpg" class="img-responsive img-fill" alt="">
+               </a>
+           </p>
+       </div>
+       <div class="col-lg-4 col-md-3 col-sm-4">
+           <p class="lineeffect">
+               <a href="#">
+                   <img src="images/p3.jpg" class="img-responsive img-fill" alt="">
+               </a>
+           </p>
+       </div>
+   </section>
     <main>
             <?php
               include 'product.php';
@@ -87,16 +89,23 @@
                 $sql = "SELECT product_image, Denumire, price FROM wine Where id_selection=3";
                 $result= $conn->query($sql);   
                 
-                 if ($result->num_rows > 0) {          
-                    while($row = $result->fetch_assoc()) {
-                            echo '<td><img class="product-image" src="data:image/jpg;base64,'.base64_encode($row["product_image"]).'"/></td>';
-                            echo '<td class="Denumire">'.$row["Denumire"].'</td>';
-                            echo '<td class="price">'.$row["price"].'</td>';
-                    }   
-                } else {
-                     echo "0 results";
-                }
+                echo '<table>';   
+                echo '<tr>';
+                echo '<div class="container">';
+                echo '<div class="row">';
+                while($row = $result->fetch_assoc()) {
+                    echo '<img src="data:image/png;base64,' . base64_encode($row["product_image"]) . '"/>';
+                    echo '<div class="product-info">';
+                    echo '<span>' .  $row["Denumire"] . '</span><br>';
+                    echo '<span>' .  $row["price"] . '</span>';
+                    echo '</div>';
+                    echo '</div>';
+                    echo '</div>';
+                }   
+                echo'</tr>';
+                echo'</table>';
             $conn->close();
+            
             ?>
             <button class="add">Adauga in cos</button>
         </div>
