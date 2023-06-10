@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Inregistreaza-te gratis</title>
+    <title>Bine ai (re)venit!</title>
     <meta charset="utf-8">
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -96,17 +96,3 @@
      </div>
   </body>
 </html>
-
- 
-   
-  
-    
-
-
-
-
-
-
-
-
-

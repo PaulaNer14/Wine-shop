@@ -2,7 +2,7 @@
     include_once 'header.php';
     include 'config.php';
 
-    $sql = "SELECT product_image, Denumire, price FROM wine Where id_selection=1";
+    $sql = "SELECT product_image, Denumire, price FROM wine Where id_selection=4";
     $result= $conn->query($sql);   
 ?>
 

@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap');
-*, *::before, *::after {
-    box-sizing: border-box;
-}
 
 body {
     font-family: 'Lato', sans-serif;
@@ -11,7 +8,7 @@ body {
     font-style: normal;
     font-weight: 400;
     visibility: visible;
-    color: #000;
+    color: white;
     letter-spacing: 0.05em;
 }
 
@@ -43,14 +40,6 @@ body {
     .container {
         width: 100%;
     }
-}
-
-.capitalize {
-    text-transform: capitalize;
-}
-
-.uppercase {
-    text-transform: uppercase;
 }
 
 .no-gutters>.col, .no-gutters>[class*="col-"] {
@@ -807,7 +796,6 @@ img {
 .offcanvas_main_menu li a {
     font-size: 14px;
     font-weight: 400;
-    text-transform: capitalize;
     display: block;
     padding-bottom: 10px;
     margin-bottom: 10px;
@@ -899,39 +887,23 @@ h1, h2, h3, h4, h5, h6 {
     background: #3c5b9b;
 }
 
-.offcanvas_footer ul li.twitter a {
-    background: #1da1f2;
+.offcanvas_footer ul li.instagram a {
+    background: #8a1131;
 }
 
-.offcanvas_footer ul li.pinterest a {
-    background: #bd081b;
-}
-
-.offcanvas_footer ul li.linkedin a {
-    background: #242492;
-}
-
-.offcanvas_footer ul li.google-plus a {
-    background: #2af645;
+.offcanvas_footer ul li.youtube a {
+    background: #e80606;
 }
 
 .offcanvas_footer ul li.facebook a:hover {
     background: #cc9900;
 }
 
-.offcanvas_footer ul li.twitter a:hover {
+.offcanvas_footer ul li.instagram a:hover {
     background: #cc9900;
 }
 
-.offcanvas_footer ul li.pinterest a:hover {
-    background: #cc9900;
-}
-
-.offcanvas_footer ul li.linkedin a:hover {
-    background: #cc9900;
-}
-
-.offcanvas_footer ul li.google-plus a:hover {
+.offcanvas_footer ul li.youtube a:hover {
     background: #cc9900;
 }
 
@@ -1169,7 +1141,6 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 400;
     display: block;
     line-height: 32px;
-    text-transform: capitalize;
 }
 
 .main_menu nav>ul>li ul.sub_menu li a:hover {
@@ -1277,7 +1248,6 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 400;
     display: block;
     line-height: 30px;
-    text-transform: capitalize;
 }
 
 .mega_menu_inner>li ul li a:hover {
@@ -1520,9 +1490,19 @@ section {
     padding: 50px 0;
 }
 
+/* .category-img .poze {
+    margin-bottom: 85px;
+    width: 100px;
+    height: 100px;
+    align-items: center;
+} */
+
+
+
 .category-img img {
-    display: block;
-    margin-bottom: 15px;
+    width: 200px;
+    height: 200px;
+    align-items: center;
 }
 
 .category-img .cat-link {
@@ -1532,11 +1512,11 @@ section {
 .category-img .cat-link a {
     display: inline-block;
     font-weight: normal;
-    color: #cc9900;
+    color: #ffffff;
 }
 
 .category-img .cat-link a:hover {
-    color: #f0dc6f;
+    color: #cc9900;
 }
 
 .super-deal-section {
@@ -1550,6 +1530,36 @@ section {
     color: #fff;
     font-weight: 600;
     font-size: 3.42em;
+}
+
+
+.super-deal .titlu {
+   text-align: justify;
+   display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+
+.super-deal .sub{
+    text-align: justify;
+    display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100px;
+   font-size: 50px;
+ }
+
+ .super-deal .info {
+    font-size: 25px;
+    text-align: justify;
+    text-indent: 25px;
+ }
+
+.super-deal .pov {
+   font-size: 25px;
+   text-align: justify;
+   text-indent: 25px;
 }
 
 .super-deal h2 {
@@ -1698,7 +1708,6 @@ figure img {
 
 .ribbon span {
     color: aliceblue;
-    text-transform: capitalize;
     padding: 22px 0px;
     display: inline-block;
     font-size: 15px;
@@ -2169,7 +2178,6 @@ figure img {
 
 .footer-title {
     color: #d9932f;
-    text-transform: capitalize;
     padding-bottom: 5px;
     margin-bottom: 10px;
     font-size: 16px;
@@ -2203,7 +2211,7 @@ hr.footer_border {
 }
 
 .footer_icon div {
-    padding: 5px 0 0;
+    padding: 15px 0 0;
 }
 
 .footer_botom_outer {

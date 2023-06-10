@@ -1,3 +1,6 @@
+<?php
+    include_once 'header.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,46 +16,7 @@
     <link rel="stylesheet" href="Dependencies/owl.theme.default.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-<header>
-    <div class="main_header header_transparent header-mobile-m">
-        <div class="header_container sticky-header">
-            <div class="container-fluid">
-                <div class="row align-items-center">
-                    <div class="col-lg-2" style="display: inline-block;">
-                        <div class="logo">
-                            <a href="index.html"> <img src="images/logo.png" alt=""></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-6" style="display: inline-block;">
-                        <div class="main_menu menu_two menu_position">
-                            <nav>
-                                <ul>
-                                    <li>
-                                        <a href="index.html">Acasa</a>
-                                    </li>
-                                    <li class="mega_items">
-                                        <a href="vinalb.php">Vin Alb</a>
-                                    </li>
-                                    <li class="mega_items">
-                                        <a href="vinrosu.php">Vin Rosu</a>
-                                    </li>
-                                    <li class="mega_items">
-                                        <a href="vinrose.php">Vin Rose</a>
-                                    </li>
-                                    <li class="mega_items">
-                                        <a href="contact.html"class="active">Contact</a>
-                                    </li>
-                                    <li class="mega_items">
-                                        <a href="login.php">Login/Register</a>
-                                     </li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-				</nav>
-			</div>
-		</div>
-	</header>
+<body>
 <section class="contact-information padding-large bg-sand">
     
 <div class="container">
@@ -81,21 +45,21 @@
 		<div class="col-md-6 p-0 mb-3">
 			<div class="container">
 				<div class="super-deal">
-                    <h1>Tine legatura cu noi
-                        <br>
-                        <span style="font-weight: 100;">Wine Corner</span>
-                    </h1>
-                    <h2>Ne puteti gasi zilnic in intervalul orar 9-17 la sediul de pe strada I.G.Duca nr.4</h2>
-                    <h3>Comenzile online pot fi ridicate si din magazinul nostru</h3>
-                    <h4>Pentru a fi la curent cu urmatoarele evenimente organizate de noi nu uita sa te abonezi la newsletter</h4>
+                  <h1 class="titlu">Păstrează legătura cu noi  </h1>
+                        <p class="sub">Wine Corner</p>
+                    <h2 class="info">Ne puteți găsi zilnic în intervalul orar 9-17 la sediul de pe strada I.G.Duca nr.4</h2>
+                    <h3 class="info">Comenzile online pot fi ridicate si din magazinul nostru.</h3>
+                    <h4 class="info">Pentru a fi la curent cu toate evenimentele organizate, abonează-te la newsletter!</h4>
                     <div class="clearfix"></div>
                 </div>
                 <div class="contact_footer">
+
                             <div class="footer_icon">
-                                <a href="#"><i class="fab fa-facebook"></i></a>
-                                <a href="#"><i class="fab fa-instagram"></i></a>
-                                <a href="#"><i class="fab fa-youtube"></i></a>
+                                <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
+                                <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                                <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
                             </div>
+                        </div>
                         </div>
                         <div class="contact_footer">
                             <div class="footer_icon">
@@ -149,46 +113,6 @@
         </div>			
     </div>
 </section>
-
-<footer class="footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3 col-sm-3">
-                <div class="footer-block about">
-                    <h4 class="footer-title">Companie</h4>
-                    <hr class="footer_border">
-                    <ul class="list-unstyled">
-                        <li><a href="javascript:void(0)">Contact</a></li>
-                        <li><a href="javascript:void(0)">Termeni &amp; Conditii</a></li>
-                        <li><a href="javascript:void(0)">Suport tehnic</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-3">
-                <div class="footer-block about">
-                    <h4 class="footer-title">Ne poti urmari si pe </h4>
-                    <hr class="footer_border">
-                    <div class="contact_footer">
-                        <div class="footer_icon">
-                            <a href="#"><i class="fab fa-facebook"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-youtube"></i></a>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="contact_footer">
-                        <div class="footer_icon">
-                            <div><i class="fa fa-paper-plane"></i>Medias, Sibiu</div>
-                            <div><i class="fa fa-envelope"></i><a href="mailto:wine@gmail.com">wine@gmail.com</a>
-                            </div>
-                            <div><i class="fa fa-phone"></i><a href="tel:0741478739">0741478739</a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
 	<script src="js/jquery-1.11.0.min.js"></script>
 	<script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
 	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
@@ -199,4 +123,7 @@
 	<script type="text/javascript" src="js/script.js"></script>
 
 </body>
+<?php
+    include_once 'footer.php';
+?>
 </html>

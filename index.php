@@ -1,3 +1,4 @@
+<?php require_once 'menu.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,265 +14,10 @@
     <link rel="stylesheet" href="Dependencies/owl.theme.default.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-    <!-- mobil size -->
-    <div class="off_canvas_overlay"></div>
-    <div class="offcanvas_menu offcanvas_two">
-        <div class="canvas_open">
-            <a href="javascript:void(0)">
-                <i class="fa fa-bars"></i>
-            </a>
-        </div>
-        <div class="offcanvas_menu_wrapper">
-            <div class="canvas_close">
-                <a href="javascript:void(0)">
-                    <i class="fa fa-times"></i>
-                </a>
-            </div>
-            <div class="header_account">
-                <ul>
-                    <li class="top_links">
-                        <a href="#">
-                            Contul meu <i class="fa fa-angle-down"></i>
-                        </a>
-                        <ul class="dropdown_links">
-                            <li><a href="#">Contul meu</a></li>
-                            <li><a href="#">Cos de cumparaturi</a></li>
-                            <li><a href="#">Ador</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            <div class="header_right_info">
-                <ul>
-                    <li class="search_box">
-                        <a href="javascript:void(0)">
-                            <i class="fa fa-search"></i>
-                        </a>
-                        <div class="search_widget">
-                            <form action="#">
-                                <input type="text" placeholder="Cauta vinul tau...">
-                                <button type="submit">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                            </form>
-                        </div>
-                    </li>
-                    <li class="header_wishlist">
-                        <a href="#">
-                            <i class="fa fa-heart"></i>
-                            <span class="item_count">3</span>
-                        </a>
-                    </li>
-                    <li class="mini_cart_wrapper">
-                        <a href="javascript:void(0)">
-                            <i class="fa fa-shopping-cart"></i>
-                            <span class="item_count">1</span>
-                        </a>
-                        <div class="mini_cart mini_cart2">
-                            <div class="cart_gallery">
-                                <div class="cart_item">
-                                    <div class="cart_img">
-                                        <a href="#">
-                                            <img src="images/cart1.png" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="cart_info">
-                                        <a href="#">
-                                           Aurelia Visinescu - 3 Fete Negre
-                                        </a>
-                                        <p><span>EUR 110</span> X 1</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="mini_cart_footer">
-                                <div class="cart_button">
-                                    <a href="#">Cos de cumparaturi</a>
-                                </div>
-                                <div class="cart_button">
-                                    <a href="#">Checkout</a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-
-            <div id="menu" class="text-left">
-                <ul class="offcanvas_main_menu">
-                    <li class="menu-item-has-children active">
-                        <a href="index.html" class="active">Acasa</a>
-                     </li>
-                    <li class="mega_items">
-                        <a href="vinalb.php">Vin Alb</a>
-                    </li>
-                    <li class="mega_items">
-                       <a href="vinrosu.php">Vin Rosu</a>
-                    </li>
-                    <li class="mega_items">
-                       <a href="vinrose.php">Vin Rose</a>
-                    </li>
-                    <li class="mega_items">
-                       <a href="contact.html">Contact</a>
-                    </li>
-                 </ul>
-                <ul class="sub-menu">
-                            <li><a href='login.php'>Login/Register</a></li>
-                        </ul>
-                
-            </div>
-
-            <div class="offcanvas_footer">
-                <span><a href="#"><i class="fa fa-envelope"></i> wine@gmail.com</a></span>
-                <ul>
-                    <li class="facebook">
-                        <a href="#">
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <header>
-        <div class="main_header header_transparent header-mobile-m">
-            <div class="header_container sticky-header">
-                <div class="container-fluid">
-                    <div class="row align-items-center">
-                        <div class="col-lg-2" style="display: inline-block;">
-                            <div class="logo">
-                                <a href="index.html"> <img src="images/logo.png" alt=""></a>
-                            </div>
-                        </div>
-                        <div class="col-lg-6" style="display: inline-block;">
-                            <div class="main_menu menu_two menu_position">
-                                <nav>
-                                    <ul>
-                                        <li>
-                                            <a href="index.html" class="active">Acasa</a>
-                                        </li>
-                                        <li class="mega_items">
-                                            <a href="vinalb.php">Vin Alb</a>
-                                        </li>
-                                        <li class="mega_items">
-                                            <a href="vinrosu.php">Vin Rosu</a>
-                                        </li>
-                                        <li class="mega_items">
-                                            <a href="vinrose.php">Vin Rose</a>
-                                        </li>
-                                        <li class="mega_items">
-                                            <a href="contact.html">Contact</a>
-                                        </li>
-                                        <li class="mega_items">
-                                            <a href="login.php">Login/Register</a>
-                                         </li>
-                                    </ul>
-                                </nav>
-                            </div>
-                        </div>
-                        <div class="col-lg-4" style="display: inline-block;">
-                            <div class="header_top_right">
-                                <div class="header_right_info">
-                                    <ul>
-                                        <li class="search_box">
-                                            <a href="javascript:void(0)">
-                                                <i class="fa fa-search"></i>
-                                            </a>
-                                            <div class="search_widget">
-                                                <form action="#">
-                                                    <input type="text" placeholder="Cauta vinul tau...">
-                                                    <button type="submit">
-                                                        <i class="fa fa-search"></i>
-                                                    </button>
-                                                </form>
-                                            </div>
-                                        </li>
-                                        <li class="header_wishlist">
-                                            <a href="#">
-                                                <i class="fa fa-heart"></i>
-                                                <span class="item_count">3</span>
-                                            </a>
-                                        </li>
-                                        <li class="mini_cart_wrapper">
-                                            <a href="javascript:void(0)">
-                                                <i class="fa fa-shopping-cart"></i>
-                                                <span class="item_count">1</span>
-                                            </a>
-                                            <div class="mini_cart mini_cart2">
-                                                <div class="cart_gallery">
-                                                    <div class="cart_item">
-                                                        <div class="cart_img">
-                                                            <a href="#">
-                                                                <img src="images/cart1.png" alt="">
-                                                            </a>
-                                                        </div>
-                                                        <div class="cart_info">
-                                                            <a href="#">
-                                                                Aurelia Visinescu - Signum 
-                                                            </a>
-                                                            <p><span>EUR 40</span> X 1</p>
-                                                        </div>
-                                                        <div class="cart_remove">
-                                                            <a href="#"><i class="fa fa-times"></i></a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="mini_cart_table">
-                                                    <div class="cart_table_border">
-                                                        <div class="cart_total">
-                                                            <span>Sub Total :</span>
-                                                            <span class="price">EUR 40</span>
-
-                                                        </div>
-                                                        <div class="cart_total mt-10">
-                                                            <span>Total :</span>
-                                                            <span class="price">EUR 40</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="mini_cart_footer">
-                                                    <div class="cart_button">
-                                                        <a href="#">Vezi cosul</a>
-                                                    </div>            
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="header_account">
-                                    <ul>
-                                        <li class="top_links">
-                                            <a href="#">
-                                                <i class="fa fa-cog"></i>
-                                            </a>
-                                            <ul class="dropdown_links">
-                                                <li><a href="#">Contul meu</a></li>
-                                                <li><a href="#">Cos de cumparaturi</a></li>
-                                                <li><a href="#">Ador</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="language">
-                                            <a href="#">
-                                                <img src="images/language.png" alt=""> EN <i
-                                                    class="fa fa-angle-down"></i>
-                                            </a>
-                                            <ul class="dropdown_language">
-                                                <li><a href="#">Engleza</a></li>
-                                                <li><a href="#">Romana</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+    <?php 
+        include_once 'header.php';
+    ?>
     <section class="pt-pb">
         <div>
             <div class="master-slider" id="masterslider">
@@ -279,7 +25,7 @@
                     <img src="images/o1.jpg" alt="">
 
                     <h3 class="ms-layer bold-title" style="left: 20px; top: 250px; color: #d9932f; font-weight: 400;"
-                        data-effect="right(250)" data-duration="3500" data-delay="200" data-ease="easeOutExpo">Cea mai buna selectie din anul 2022</h3>
+                        data-effect="right(250)" data-duration="3500" data-delay="200" data-ease="easeOutExpo">Cea mai buna selectie din anul 2023</h3>
                     <h3 class="ms-layer light-title"
                         style="left: 20px; top: 300px; color: #fff; font-weight: 900; letter-spacing: 1px;"
                         data-effect="left(short)" data-duration="3500" data-delay="300" data-ease="easeOutExpo">
@@ -289,7 +35,7 @@
                         style="left: 20px; top: 350px; color: #fff; font-weight: 900; letter-spacing: 0.5px;"
                         data-effect="left(short)" data-duration="3500" data-delay="350" data-ease="easeOutExpo">WINE CORNER
                     </h1>
-                    <a href="#" class="ms-layer"
+                    <a href="vinalb.php" class="ms-layer"
                         style="left: 20px; top: 424px; color: #fff; font-weight: 400; letter-spacing: 0.5px; margin: 0px ; padding: 0px; font-size: 14px; line-height: 20px; border: 1px solid #fff; padding: 10px 20px;"
                         data-effect="left(short)" data-duration="3500" data-delay="300" data-ease="easeOutExpo">Comanda acum</a>
                 </div>
@@ -297,7 +43,7 @@
                     <img src="images/o2.jpg" alt="">
 
                     <h3 class="ms-layer bold-title" style="left: 20px; top: 250px; color: #d9932f; font-weight: 400;"
-                        data-effect="right(250)" data-duration="3500" data-delay="200" data-ease="easeOutExpo">Cea mai buna selectie din anul 2022</h3>
+                        data-effect="right(250)" data-duration="3500" data-delay="200" data-ease="easeOutExpo">Cea mai buna selectie din anul 2023</h3>
                     <h3 class="ms-layer light-title"
                         style="left: 20px; top: 300px; color: #fff; font-weight: 900; letter-spacing: 1px;"
                         data-effect="left(short)" data-duration="3500" data-delay="300" data-ease="easeOutExpo">
@@ -307,7 +53,7 @@
                         style="left: 20px; top: 350px; color: #fff; font-weight: 900; letter-spacing: 0.5px;"
                         data-effect="left(short)" data-duration="3500" data-delay="350" data-ease="easeOutExpo">WINE CORNER
                     </h1>
-                    <a href="#" class="ms-layer"
+                    <a href="vinalb.php" class="ms-layer"
                         style="left: 20px; top: 424px; color: #fff; font-weight: 400; letter-spacing: 0.5px; margin: 0px ; padding: 0px; font-size: 14px; line-height: 20px; border: 1px solid #fff; padding: 10px 20px;"
                         data-effect="left(short)" data-duration="3500" data-delay="300" data-ease="easeOutExpo">Comanda acum</a>
                 </div>
@@ -344,18 +90,10 @@
     </section>
     <section class="category-img">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+            <div class="row poze">
+            <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
                     <h4 class="cat-link">
-                        <a href="#">
-                            <img src="images/c2.png" class="img-responsive" alt="">
-                            Vin <br> Rosu
-                        </a>
-                    </h4>
-                </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
-                    <h4 class="cat-link">
-                        <a href="#">
+                        <a href="vinalb.php">
                             <img src="images/c3.png" class="img-responsive" alt="">
                             Vin <br> Alb
                         </a>
@@ -363,7 +101,16 @@
                 </div>
                 <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
                     <h4 class="cat-link">
-                        <a href="#">
+                        <a href="vinrosu.php">
+                            <img src="images/c2.png" class="img-responsive" alt="">
+                            Vin <br> Rosu
+                        </a>
+                    </h4>
+                </div>
+               
+                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                    <h4 class="cat-link">
+                        <a href="vinrose.php">
                             <img src="images/c4.png" class="img-responsive" alt="">
                             Vin <br> Rose
                         </a>
@@ -384,7 +131,7 @@
                         <h2>"Vinul este poezie imbuteliata"</h2>
                         <p>Dorința noastră este aceea de a produce vinuri deosebite și pline de aroma. Vrem ca în fiecare pahar să se regasească o parte din pasiunea noastra pentru lucrul bine făcut, cu implicare și responsabilitate. Vrem ca cei care degustă vinurile de la Wine Corner, să ramână cu aroma buchetului boabelor de struguri proaspăt storși. Vrem să fie așa cum spunea și Anton Pann : ”Vinul este toiagul bătrâneților și nebunia tinereților”.</p>
                         <div class="clearfix"></div>
-                        <a href="#" class="btn btn-normal">Cumpara acum</a>
+                        <a href="vinalb.php" class="btn btn-normal">Cumpara acum</a>
                     </div>
                 </div>
             </div>
@@ -421,7 +168,7 @@
                                         <!-- start -->
                                         <div class="product-main">
                                             <figure class="dark-theme">
-                                                <img src="images/product/product-1.jpg" alt="">
+                                                <img src="images/product/product-1.png" alt="">
                                                 <div class="ribbon"><span>NOU</span></div>
                                                 <span class="block-sticker-tag1">
                                                     <span class="off_tag"><strong><i
@@ -440,8 +187,8 @@
                                                 <h4>Lupi</h4>
                                                 <div class="clear"></div>
                                                 <div class="rpice">
-                                                    <span class="sell-price">EUR 99</span>
-                                                    <span class="actual-price">EUR 110</span>
+                                                    <span class="sell-price">RON 99</span>
+                                                    <span class="actual-price">RON 110</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -468,34 +215,8 @@
                                                 <h4>Saperavi</h4>
                                                 <div class="clear"></div>
                                                 <div class="rpice">
-                                                    <span class="sell-price">EUR 75</span>
-                                                    <span class="actual-price">EUR 90</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="product-main">
-                                            <figure class="dark-theme">
-                                                <img src="images/product/product-3.png" alt="">
-
-                                                <span class="block-sticker-tag1">
-                                                    <span class="off_tag"><strong><i
-                                                                class="fa fa-shopping-basket"></i></strong></span>
-                                                </span>
-                                                <span class="block-sticker-tag2">
-                                                    <span class="off_tag1"><strong><i
-                                                                class="fa fa-heart"></i></strong></span>
-                                                </span>
-                                                <span class="block-sticker-tag3">
-                                                    <span class="off_tag2"><strong><i
-                                                                class="fa fa-eye"></i></strong></span>
-                                                </span>
-                                            </figure>
-                                            <div class="block-caption1">
-                                                <h4>Signum</h4>
-                                                <div class="clear"></div>
-                                                <div class="rpice">
-                                                    <span class="sell-price">EUR 59</span>
-                                                    <span class="actual-price">EUR 75</span>
+                                                    <span class="sell-price">RON 75</span>
+                                                    <span class="actual-price">RON 90</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -516,17 +237,42 @@
                                                 </span>
                                             </figure>
                                             <div class="block-caption1">
-                                                <h4>Cold Wine</h4>
+                                                <h4>Mysterium</h4>
                                                 <div class="clear"></div>
                                                 <div class="rpice">
-                                                    <span class="sell-price">EUR 40</span>
-                                                    <span class="actual-price">EUR 50</span>
+                                                    <span class="sell-price">RON 40</span>
+                                                    <span class="actual-price">RON 50</span>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="product-main">
                                             <figure class="dark-theme">
-                                                <img src="images/product/product-5.png" alt="">
+                                                <img src="images/product/anima.png" alt="">
+                                                <span class="block-sticker-tag1">
+                                                    <span class="off_tag"><strong><i
+                                                                class="fa fa-shopping-basket"></i></strong></span>
+                                                </span>
+                                                <span class="block-sticker-tag2">
+                                                    <span class="off_tag1"><strong><i
+                                                                class="fa fa-heart"></i></strong></span>
+                                                </span>
+                                                <span class="block-sticker-tag3">
+                                                    <span class="off_tag2"><strong><i
+                                                                class="fa fa-eye"></i></strong></span>
+                                                </span>
+                                            </figure>
+                                            <div class="block-caption1">
+                                                <h4>Anima</h4>
+                                                <div class="clear"></div>
+                                                <div class="rpice">
+                                                    <span class="sell-price">RON 119</span>
+                                                    <span class="actual-price">RON 149</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-main">
+                                            <figure class="dark-theme">
+                                                <img src="images/product/product-5.jpg" alt="">
                                                 <span class="block-sticker-tag1">
                                                     <span class="off_tag"><strong><i
                                                                 class="fa fa-shopping-basket"></i></strong></span>
@@ -544,8 +290,8 @@
                                                 <h4>Caii de la Letea</h4>
                                                 <div class="clear"></div>
                                                 <div class="rpice">
-                                                    <span class="sell-price">EUR 79</span>
-                                                    <span class="actual-price">EUR 90</span>
+                                                    <span class="sell-price">RON 79</span>
+                                                    <span class="actual-price">RON 90</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -557,7 +303,7 @@
                                 <div class="owl-carousel owl-theme product-slider">
                                     <div class="product-main">
                                         <figure class="dark-theme">
-                                            <img src="images/product/product-6.png" alt="">
+                                            <img src="images/product/product-9.png" alt="">
                                             <span class="block-sticker-tag1">
                                                 <span class="off_tag"><strong><i
                                                             class="fa fa-shopping-basket"></i></strong></span>
@@ -571,11 +317,11 @@
                                             </span>
                                         </figure>
                                         <div class="block-caption1">
-                                            <h4>Sole</h4>
+                                            <h4>Domeniile Davidescu - Viorica</h4>
                                             <div class="clear"></div>
                                             <div class="rpice">
-                                                <span class="sell-price">EUR 70</span>
-                                                <span class="actual-price">EUR 85</span>
+                                                <span class="sell-price">RON 70</span>
+                                                <span class="actual-price">RON 85</span>
                                             </div>
                                         </div>
                                     </div>
@@ -596,11 +342,11 @@
                                             </span>
                                         </figure>
                                         <div class="block-caption1">
-                                            <h4>Purcari</h4>
+                                            <h4>Briza</h4>
                                             <div class="clear"></div>
                                             <div class="rpice">
-                                                <span class="sell-price">EUR 90</span>
-                                                <span class="actual-price">EUR 100</span>
+                                                <span class="sell-price">RON 90</span>
+                                                <span class="actual-price">RON 100</span>
                                             </div>
                                         </div>
                                     </div>
@@ -624,8 +370,8 @@
                                             <h4>Muse</h4>
                                             <div class="clear"></div>
                                             <div class="rpice">
-                                                <span class="sell-price">EUR 85</span>
-                                                <span class="actual-price">EUR 95</span>
+                                                <span class="sell-price">RON 85</span>
+                                                <span class="actual-price">RON 95</span>
                                             </div>
                                         </div>
                                     </div>
@@ -649,8 +395,8 @@
                                             <h4>Lupi</h4>
                                             <div class="clear"></div>
                                             <div class="rpice">
-                                                <span class="sell-price">EUR 99</span>
-                                                <span class="actual-price">EUR 110</span>
+                                                <span class="sell-price">RON 99</span>
+                                                <span class="actual-price">RON 110</span>
                                             </div>
                                         </div>
                                     </div>
@@ -673,8 +419,8 @@
                                             <h4>Saperavi</h4>
                                             <div class="clear"></div>
                                             <div class="rpice">
-                                                <span class="sell-price">EUR 75</span>
-                                                <span class="actual-price">EUR 90</span>
+                                                <span class="sell-price">RON 75</span>
+                                                <span class="actual-price">RON 90</span>
                                             </div>
                                         </div>
                                     </div>
@@ -702,8 +448,8 @@
                                             <h4>Signum</h4>
                                             <div class="clear"></div>
                                             <div class="rpice">
-                                                <span class="sell-price">EUR 59</span>
-                                                <span class="actual-price">EUR 75</span>
+                                                <span class="sell-price">RON 59</span>
+                                                <span class="actual-price">RON 75</span>
                                             </div>
                                         </div>
                                     </div>
@@ -728,7 +474,7 @@
                                             <div class="clear"></div>
                                             <div class="rpice">
                                                 <span class="sell-price">ERU 99</span>
-                                                <span class="actual-price">EUR 110</span>
+                                                <span class="actual-price">RON 110</span>
                                             </div>
                                         </div>
                                     </div>
@@ -752,8 +498,8 @@
                                             <h4>Signum</h4>
                                             <div class="clear"></div>
                                             <div class="rpice">
-                                                <span class="sell-price">EUR 59</span>
-                                                <span class="actual-price">EUR 75</span>
+                                                <span class="sell-price">RON 59</span>
+                                                <span class="actual-price">RON 75</span>
                                             </div>
                                         </div>
                                     </div>
@@ -777,14 +523,14 @@
                                             <h4>Sole</h4>
                                             <div class="clear"></div>
                                             <div class="rpice">
-                                                <span class="sell-price">EUR 70</span>
-                                                <span class="actual-price">EUR 85</span>
+                                                <span class="sell-price">RON 70</span>
+                                                <span class="actual-price">RON 85</span>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="product-main">
                                         <figure class="dark-theme">
-                                            <img src="images/product/product-4.png" alt="">
+                                            <img src="images/product/product-1.png" alt="">
                                             <span class="block-sticker-tag1">
                                                 <span class="off_tag"><strong><i
                                                             class="fa fa-shopping-basket"></i></strong></span>
@@ -798,11 +544,11 @@
                                             </span>
                                         </figure>
                                         <div class="block-caption1">
-                                            <h4>Cold Wine</h4>
+                                            <h4>Lupi</h4>
                                             <div class="clear"></div>
                                             <div class="rpice">
-                                                <span class="sell-price">EUR 40</span>
-                                                <span class="actual-price">EUR 50</span>
+                                                <span class="sell-price">RON 40</span>
+                                                <span class="actual-price">RON 50</span>
                                             </div>
                                         </div>
                                     </div>
@@ -839,45 +585,6 @@
             </div>
         </div>
     </section>
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 col-sm-3">
-                    <div class="footer-block about">
-                        <h4 class="footer-title">Companie</h4>
-                        <hr class="footer_border">
-                        <ul class="list-unstyled">
-                            <li><a href="javascript:void(0)">Contact</a></li>
-                            <li><a href="javascript:void(0)">Termeni &amp; Conditii</a></li>
-                            <li><a href="javascript:void(0)">Suport tehnic</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-3">
-                    <div class="footer-block about">
-                        <h4 class="footer-title">Ne poti urmari si pe </h4>
-                        <hr class="footer_border">
-                        <div class="contact_footer">
-                            <div class="footer_icon">
-                                <a href="#"><i class="fab fa-facebook"></i></a>
-                                <a href="#"><i class="fab fa-instagram"></i></a>
-                                <a href="#"><i class="fab fa-youtube"></i></a>
-                            </div>
-                        </div>
-                        <br>
-                        <div class="contact_footer">
-                            <div class="footer_icon">
-                                <div><i class="fa fa-paper-plane"></i>Medias, Sibiu</div>
-                                <div><i class="fa fa-envelope"></i><a href="mailto:wine@gmail.com">wine@gmail.com</a>
-                                </div>
-                                <div><i class="fa fa-phone"></i><a href="tel:0741478739">0741478739</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
     <script src="Dependencies/jquery.min.js"></script>
     <script src="Dependencies/jquery.easing.min.js"></script>
     <script src="Dependencies/bootstrap.min.js"></script>
@@ -885,4 +592,7 @@
     <script src="Dependencies/owl.carousel.min.js"></script>
     <script src="main.js"></script>
 </body>
+<?php
+    include_once 'footer.php';
+?>
 </html>

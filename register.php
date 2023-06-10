@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     VALUES ('$id_client', '$firstName', '$lastName', '$Telefon', '$email', '$password')";
 
     if ($conn->query($sql) === TRUE) {
-        header("Location:index.html");
+        header("Location:index.php");
     } else {
         // echo "Error: " . $sql . "<br>" . $conn->error;
             echo "Something went wrong, please review the information added and try again";
