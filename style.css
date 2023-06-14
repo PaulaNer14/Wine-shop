@@ -610,6 +610,7 @@ ul {
     border-bottom: 1px solid #ebebeb;
     display: flex;
     justify-content: space-between;
+    min-height: 130px;
 }
 
 .cart_img {
