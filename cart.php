@@ -1,163 +1,72 @@
 
 <?php
-    session_start();
-    $database_name = "web";
-    $con = mysqli_connect("localhost","root","","web");
+session_start();
+include 'config.php';
+// id_selection
+// 1 - rosu
+// 2 - alb
+// 3 - rose
+// 4 - spumant
+var_dump(session_status());
+var_dump($_SESSION['shopping_cart']);
+if (isset($_POST['id_vin']) && isset($_POST['add'])) {
+    $id = $_POST['id_vin'];
+    $query = "SELECT id_vin, product_image, denumire, price FROM wine where id_vin=$id";
+    $result = $conn->query($query);
+    $vin = $result->fetch_assoc();
+    $cart_item = [
+        'id_vin' => $vin['id_vin'],
+        'product_image' => $vin['product_image'],
+        'denumire' => $vin['denumire'],
+        'price' => $vin['price'],
+        'qty' => 1,
+    ];
 
-    if (isset($_POST["add"])){
-        if (isset($_SESSION["cart"])){
-            $item_array_id = array_column($_SESSION["cart"],"product_id");
-            if (!in_array($_GET["id_vin"],$item_array_id)){
-                $count = count($_SESSION["cart"]);
-                $item_array = array(
-                    'product_id' => $_GET["id_vin"],
-                    'item_name' => $_POST["hidden_name"],
-                    'product_price' => $_POST["hidden_price"],
-                    'item_quantity' => $_POST["quantity"],
-                );
-                $_SESSION["cart"][$count] = $item_array;
-                echo '<script>window.location="Cart.php"</script>';
-            }else{
-                echo '<script>alert("Product is already Added to Cart")</script>';
-                echo '<script>window.location="Cart.php"</script>';
-            }
-        }else{
-            $item_array = array(
-                'product_id' => $_GET["id_vins"],
-                'item_name' => $_POST["hidden_name"],
-                'product_price' => $_POST["hidden_price"],
-                'item_quantity' => $_POST["quantity"],
-            );
-            $_SESSION["cart"][0] = $item_array;
+//    $_SESSION['shopping_cart'][] = $cart_item;
+    // check for existing wine
+    // increment qty
+    $total = $_SESSION['total'] ?? 0;
+    $total += $vin['price'];
+    $found = false;
+    if(isset($_SESSION['shopping_cart'])) {
+        foreach($_SESSION['shopping_cart'] as &$item) {
+            if($item['id_vin'] !== $vin['id_vin']) continue;
         }
     }
+    if(!$found) {
+        $_SESSION['shopping_cart'][] = $cart_item;
+    }
+}
 
-    if (isset($_GET["action"])){
-        if ($_GET["action"] == "delete"){
-            foreach ($_SESSION["cart"] as $keys => $value){
-                if ($value["product_id"] == $_GET["id"]){
-                    unset($_SESSION["cart"][$keys]);
-                    echo '<script>alert("Product has been Removed...!")</script>';
-                    echo '<script>window.location="Cart.php"</script>';
-                }
-            }
+if (isset($_POST['id_vin']) && isset($_POST['delete'])) {
+    $id = $_POST['id_vin'];
+    $query = "SELECT id_vin, product_image, denumire, price FROM wine where id_vin=$id";
+    $result = $conn->query($query);
+    $vin = $result->fetch_assoc();
+    $cart_item = [
+        'id_vin' => $vin['id_vin'],
+        'product_image' => $vin['product_image'],
+        'denumire' => $vin['denumire'],
+        'price' => $vin['price'],
+        'qty' => 1,
+    ];
+
+//    $_SESSION['shopping_cart'][] = $cart_item;
+    // check for existing wine
+    // increment qty
+    $total = $_SESSION['total'] ?? 0;
+    $total += $vin['price'];
+    $found = false;
+    if(isset($_SESSION['shopping_cart'])) {
+        foreach($_SESSION['shopping_cart'] as &$item) {
+            if($item['id_vin'] !== $vin['id_vin']) continue;
+            $item['qty']--;
+            if($item)
+            $found = true;
         }
     }
-?>
-
-<!doctype html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Cos de cumparaturi</title>
-
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-    <style>
-        @import url('https://fonts.googleapis.com/css?family=Titillium+Web');
-
-        *{
-            font-family: 'Titillium Web', sans-serif;
-        }
-        .wine{
-            border: 1px solid #eaeaec;
-            margin: -1px 19px 3px -1px;
-            padding: 10px;
-            text-align: center;
-            background-color: #efefef;
-        }
-        table, th, tr{
-            text-align: center;
-        }
-        .title2{
-            text-align: center;
-            color: #66afe9;
-            background-color: #efefef;
-            padding: 2%;
-        }
-        h2{
-            text-align: center;
-            color: #66afe9;
-            background-color: #efefef;
-            padding: 2%;
-        }
-        table th{
-            background-color: #efefef;
-        }
-    </style>
-</head>
-<body>
-
-    <div class="container" style="width: 65%">
-        <h2>Cos de cumparaturi</h2>0
-        <?php
-            $query = "SELECT * FROM wine ORDER BY id_vin ASC ";
-            $result = mysqli_query($con,$query);
-            if(mysqli_num_rows($result) > 0) {
-                while ($row = mysqli_fetch_array($result)) {                    ?>
-                    <div class="col-md-3">
-
-                        <form method="post" action="cart.php?action=add&id=<?php echo $row["id_vin"]; ?>">
-
-                            <div class="wine">
-                                <img src="<?php echo $row["product_image"]; ?>" class="img-responsive">
-                                <h5 class="text-info"><?php echo $row["Denumire"]; ?></h5>
-                                <h5 class="text-danger"><?php echo $row["price"]; ?></h5>
-                                <input type="text" name="cantitate" class="form-control" value="1">
-                                <input type="hidden" name="hidden_name" value="<?php echo $row["Denumire"]; ?>">
-                                <input type="hidden" name="hidden_price" value="<?php echo $row["price"]; ?>">
-                                <input type="submit" name="add" style="margin-top: 5px;" class="btn btn-success"
-                                       value="Adauga in cos">
-                            </div>
-                        </form>
-                    </div>
-                    <?php
-                }
-            }
-        ?>
-
-        <div style="clear: both"></div>
-        <h3 class="title2">Detalii cos de cumparaturi</h3>
-        <div class="table-responsive">
-            <table class="table table-bordered">
-            <tr>
-                <th width="30%">Produs</th>
-                <th width="10%">Cantitate</th>
-                <th width="13%">Pret</th>
-                <th width="10%">Pret total</th>
-                <th width="17%">Remove Item</th>
-            </tr>
-
-            <?php
-                if(!empty($_SESSION["cart"])){
-                    $total = 0;
-                    foreach ($_SESSION["cart"] as $key => $value) {
-                        ?>
-                        <tr>
-                            <td><?php echo $value["item_name"]; ?></td>
-                            <td><?php echo $value["item_quantity"]; ?></td>
-                            <td>$ <?php echo $value["product_price"]; ?></td>
-                            <td>$ <?php echo number_format($value["item_quantity"] * $value["product_price"], 3); ?></td>
-                            <td><a href="Cart.php?action=delete&id=<?php echo $value["product_id"]; ?>"><span class="text-danger">Remove Item</span></a></td>
-                        </tr>
-                        <?php
-                        $total = $total + ($value["item_quantity"] * $value["product_price"]);
-                    }
-                        ?>
-                        <tr>
-                            <td colspan="3", align="right">Total</td>
-                            <th align = "right">RON <?php echo number_format($total, 3); ?></th>
-                            <td></td>
-                        </tr>
-                        <?php
-                    }
-                ?>
-            </table>
-        </div>
-    </div>
-</body>
-</html>
+    if(!$found) {
+        $_SESSION['shopping_cart'][] = $cart_item;
+    }
+    var_dump($_SESSION['shopping_cart']);
+}
