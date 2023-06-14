@@ -109,7 +109,7 @@ button:active {
                             echo '<div class="row">';
                             $counter = 0;
                             while($row = $result->fetch_assoc()) {
-                                echo "<form method='post' action='cart.php'>";
+                                echo "<form method='post' action=''>";
                                 echo '<div class="col">';
                                     echo '<div class="wrapper-product">';
                                     echo '<img src="data:image/png;base64,' . base64_encode($row["product_image"]) . '"/>';

@@ -1,13 +1,14 @@
 <?php
+include 'cart.php';
 //    start session if not started
     if(session_status() !== 2) {
         session_start();
     }
     $cart = [];
+    $total = 0;
     if(isset($_SESSION['shopping_cart'])){
         $cart = $_SESSION['shopping_cart'];
-    } else {
-        $cart = [];
+        $total = $_SESSION['total'];
     }
 ?>
 
@@ -120,14 +121,13 @@
                                                 </div>
                                                 <div class="mini_cart_table">
                                                     <div class="cart_table_border">
-                                                        <div class="cart_total">
-                                                            <span>Sub Total :</span>
-                                                            <span class="price">RON 40</span>
-
-                                                        </div>
+<!--                                                        <div class="cart_total">-->
+<!--                                                            <span>Sub Total :</span>-->
+<!--                                                            <span class="price">RON 40</span>-->
+<!--                                                        </div>-->
                                                         <div class="cart_total mt-10">
                                                             <span>Total :</span>
-                                                            <span class="price">RON 40</span>
+                                                            <?php echo "<span class=\"price\">RON $total</span>"?>
                                                         </div>
                                                     </div>
                                                 </div>
