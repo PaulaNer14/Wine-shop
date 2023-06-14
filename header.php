@@ -1,16 +1,14 @@
 <?php
-    session_start();
-//    session_destroy();
+//    start session if not started
+    if(session_status() !== 2) {
+        session_start();
+    }
+    $cart = [];
     if(isset($_SESSION['shopping_cart'])){
         $cart = $_SESSION['shopping_cart'];
-//        $_SESSION['shopping_cart'];
-//        var_dump($cart);
     } else {
         $cart = [];
     }
-
-//    $sql = "SELECT product_image, Denumire, price FROM wine Where id_selection=1";
-//    $result= $conn->query($sql);
 ?>
 
 <!DOCTYPE html>
@@ -46,16 +44,16 @@
                                             <a href="index.php">Acasa</a>
                                         </li>
                                         <li class="mega_items">
-                                            <a href="vinalb.php">Vin Alb</a>
+                                            <a href="vin.php?tip_vin=2">Vin Alb</a>
                                         </li>
                                         <li class="mega_items">
-                                            <a href="vinrosu.php">Vin Rosu</a>
+                                            <a href="vin.php?tip_vin=1">Vin Rosu</a>
                                         </li>
                                         <li class="mega_items">
-                                            <a href="vinrose.php">Vin Rose</a>
+                                            <a href="vin.php?tip_vin=3">Vin Rose</a>
                                         </li>
                                         <li class="mega_items">
-                                        <a href="vinspumant.php">Vin Spumant</a>
+                                        <a href="vin.php?tip_vin=4">Vin Spumant</a>
                                         </li>
                                         <li class="mega_items">
                                             <a href="povesteanoastra.php">Povestea Noastra</a>
@@ -100,27 +98,20 @@
                                                 <div class="cart_gallery">
                                                     <?php
                                                     foreach ($cart as $item) {
-                                                        var_dump([
-                                                                'item' => $item
-                                                        ]);
                                                         echo '<div class="cart_item">';
                                                             echo '<div class="cart_img">';
                                                             echo "<form method='post' action=''>";
-//                                                            echo '<a href="#">';
 //                                                            echo '<img src="images/cart1.png" alt="">';
                                                                 echo '<img src="data:image/png;base64,' . base64_encode($item["product_image"]) . '"/>';
-//                                                            echo '</a>';
                                                             echo '</div>';
                                                             echo '<div class="cart_info">';
-//                                                            echo '<a href="#">';
                                                             echo '<span> '. $item['denumire'] .' </span>';
-//                                                            echo '</a>';
                                                             echo '<p><span>' . $item['price'] . ' RON</span> X ' . $item['qty'] . '</p>';
                                                             echo '</div>';
                                                             echo '<input type="hidden" name="delete" value="true"/>';
                                                             echo "<input type='hidden' name='id_vin' value=" . $item['id_vin'] . " />";
                                                             echo '<div class="cart_remove">';
-                                                            echo '<input type="submit"><i class="fa fa-times"/></input>';
+                                                            echo '<button type="submit" class="delete">Șterge</button>';
                                                             echo '</form>';
                                                             echo '</div>';
                                                         echo '</div>';
@@ -272,7 +263,7 @@
                         <a href="index.php" class="active">Acasa</a>
                      </li>
                     <li class="mega_items">
-                        <a href="vinalb.php">Vin Alb</a>
+                        <a href="vin.php">Vin Alb</a>
                     </li>
                     <li class="mega_items">
                        <a href="vinrosu.php">Vin Rosu</a>
