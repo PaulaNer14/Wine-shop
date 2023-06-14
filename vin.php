@@ -1,32 +1,16 @@
 <?php
-   include_once 'header.php';
+    include_once 'header.php';
     include 'config.php';
-
-        $sql = "SELECT id_vin, product_image, denumire, price FROM wine where id_selection=2";
+    include 'cart.php';
+    // id_selection
+    // 1 - rosu
+    // 2 - alb
+    // 3 - rose
+    // 4 - spumant
+    // default = 1
+    $id_selection = $_GET['tip_vin'] ?? 1;
+    $sql = "SELECT id_vin, product_image, denumire, price FROM wine where id_selection=$id_selection";
     $result = $conn->query($sql);
-if (isset($_POST['id_vin'])!= "") {
-    echo 'Adaugat Vin' . $_POST['id_vin'];
-    $id = $_POST['id_vin'];
-    $query_vin = "SELECT id_vin, product_image, denumire, price FROM wine where id_vin=$id";
-    $vin_result = $conn->query($sql);
-    $vin = $vin_result->fetch_assoc();
-    $cart_item = array([
-         'id_vin' => $vin['id_vin'],
-        'product_image' => $vin['product_image'],
-        'denumire' => $vin['denumire'],
-        'price' => $vin['price'],
-        'qty' => 1,
-    ]);
-
-
-//    if(isset($_SESSION['shopping_cart'])) {
-//        foreach($_SESSION['shopping_cart'] as &$item) {
-//            if($item['id_vin'] !== $vin['id_vin']) continue;
-//            $cart_item['qty']++;
-//        }
-//    }
-    $_SESSION['shopping_cart'][] = $cart_item;
-}
 ?>
 
 <!DOCTYPE html>
@@ -125,12 +109,13 @@ button:active {
                             echo '<div class="row">';
                             $counter = 0;
                             while($row = $result->fetch_assoc()) {
-                                echo "<form method='post' action=''>";
+                                echo "<form method='post' action='cart.php'>";
                                 echo '<div class="col">';
                                     echo '<div class="wrapper-product">';
                                     echo '<img src="data:image/png;base64,' . base64_encode($row["product_image"]) . '"/>';
                                         echo '<div class="product-info">';
                                         echo "<input type='hidden' name='id_vin' value=".$row['id_vin']." />";
+                                        echo '<input type="hidden" name="add" value="true"/>';
                                         echo '<span>' .  $row["denumire"] . '</span><br>';
                                         echo '<span>' .  $row["price"]. '<span> RON'  . '</div>';
                                         echo '<button type="submit" class="add">Adaugă în coș</button>';
