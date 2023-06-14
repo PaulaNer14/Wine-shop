@@ -35,9 +35,9 @@
                         style="left: 20px; top: 350px; color: #fff; font-weight: 900; letter-spacing: 0.5px;"
                         data-effect="left(short)" data-duration="3500" data-delay="350" data-ease="easeOutExpo">WINE CORNER
                     </h1>
-                    <a href="vinalb.php" class="ms-layer"
-                        style="left: 20px; top: 424px; color: #fff; font-weight: 400; letter-spacing: 0.5px; margin: 0px ; padding: 0px; font-size: 14px; line-height: 20px; border: 1px solid #fff; padding: 10px 20px;"
-                        data-effect="left(short)" data-duration="3500" data-delay="300" data-ease="easeOutExpo">Comanda acum</a>
+                    <a href="vin.php?tip_vin=2" class="ms-layer"
+                       style="left: 20px; top: 424px; color: #fff; font-weight: 400; letter-spacing: 0.5px; margin: 0px ; padding: 0px; font-size: 14px; line-height: 20px; border: 1px solid #fff; padding: 10px 20px;"
+                       data-effect="left(short)" data-duration="3500" data-delay="300" data-ease="easeOutExpo">Comanda acum</a>
                 </div>
                 <div class="ms-slide slide-2" style="z-index: 13;" data-delay="10">
                     <img src="images/o2.jpg" alt="">
@@ -53,9 +53,9 @@
                         style="left: 20px; top: 350px; color: #fff; font-weight: 900; letter-spacing: 0.5px;"
                         data-effect="left(short)" data-duration="3500" data-delay="350" data-ease="easeOutExpo">WINE CORNER
                     </h1>
-                    <a href="vinalb.php" class="ms-layer"
-                        style="left: 20px; top: 424px; color: #fff; font-weight: 400; letter-spacing: 0.5px; margin: 0px ; padding: 0px; font-size: 14px; line-height: 20px; border: 1px solid #fff; padding: 10px 20px;"
-                        data-effect="left(short)" data-duration="3500" data-delay="300" data-ease="easeOutExpo">Comanda acum</a>
+                    <a href="vin.php?tip_vin=2" class="ms-layer"
+                       style="left: 20px; top: 424px; color: #fff; font-weight: 400; letter-spacing: 0.5px; margin: 0px ; padding: 0px; font-size: 14px; line-height: 20px; border: 1px solid #fff; padding: 10px 20px;"
+                       data-effect="left(short)" data-duration="3500" data-delay="300" data-ease="easeOutExpo">Comanda acum</a>
                 </div>
             </div>
         </div>
@@ -93,7 +93,7 @@
             <div class="row poze">
             <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
                     <h4 class="cat-link">
-                        <a href="vinalb.php">
+                        <a href="vin.php?tip_vin=2">
                             <img src="images/c3.png" class="img-responsive" alt="">
                             Vin <br> Alb
                         </a>
@@ -101,7 +101,7 @@
                 </div>
                 <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
                     <h4 class="cat-link">
-                        <a href="vinrosu.php">
+                        <a href="vin.php?tip_vin=1">
                             <img src="images/c2.png" class="img-responsive" alt="">
                             Vin <br> Rosu
                         </a>
@@ -110,7 +110,7 @@
                
                 <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
                     <h4 class="cat-link">
-                        <a href="vinrose.php">
+                        <a href="vin.php?tip_vin=3">
                             <img src="images/c4.png" class="img-responsive" alt="">
                             Vin <br> Rose
                         </a>
@@ -131,7 +131,7 @@
                         <h2>"Vinul este poezie imbuteliata"</h2>
                         <p>Dorința noastră este aceea de a produce vinuri deosebite și pline de aroma. Vrem ca în fiecare pahar să se regasească o parte din pasiunea noastra pentru lucrul bine făcut, cu implicare și responsabilitate. Vrem ca cei care degustă vinurile de la Wine Corner, să ramână cu aroma buchetului boabelor de struguri proaspăt storși. Vrem să fie așa cum spunea și Anton Pann : ”Vinul este toiagul bătrâneților și nebunia tinereților”.</p>
                         <div class="clearfix"></div>
-                        <a href="vinalb.php" class="btn btn-normal">Cumpara acum</a>
+                        <a href="vin.php?tip_vin=2" class="btn btn-normal">Cumpara acum</a>
                     </div>
                 </div>
             </div>
