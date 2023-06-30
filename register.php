@@ -9,8 +9,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $Telefon = $_POST["Telefon"] ?? "";
     $email = $_POST["email"] ?? "";
     $password = $_POST["password"] ?? "";
-        $id_client = rand(10, 100);
 
+    // get last id, increment
+    $maxIdSql = 'select max(id_client) as id from client;';
+    $result = mysqli_query($conn, $maxIdSql);
+    $id_client = (int)mysqli_fetch_assoc($result)['id'] + 1;
 
     // Insert the new user into the database
     $sql = "INSERT INTO client (id_client, firstName, lastName, Telefon, email, password)
