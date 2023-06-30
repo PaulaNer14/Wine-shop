@@ -141,10 +141,10 @@ CREATE TABLE IF NOT EXISTS `selection` (
 --
 
 INSERT INTO `selection` (`id_selection`, `denumire`, `page`) VALUES
-(1, 'Vin Rosu', 'vinrosu.php'),
-(2, 'Vin Alb', 'vinalb.php'),
-(3, 'Vin Rose', 'vinrose.php'),
-(4, 'Vin Spumant', 'vinspumant.php');
+(1, 'Vin Rosu', 'vin.php?tip_vin=1'),
+(2, 'Vin Alb', 'vin.php?tip_vin=2'),
+(3, 'Vin Rose', 'vin.php?tip_vin=3'),
+(4, 'Vin Spumant', 'vin.php?tip_vin=4');
 
 -- --------------------------------------------------------
 
