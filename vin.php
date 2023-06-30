@@ -107,14 +107,15 @@ button:active {
                     echo '<tr>';
                         echo '<div class="container">';
                             echo '<div class="row">';
-                            $counter = 0;
+                            $form_token = uniqid();
                             while($row = $result->fetch_assoc()) {
-                                echo "<form method='post' action=''>";
+                                echo "<form method='post' action='cart.php'>";
                                 echo '<div class="col">';
                                     echo '<div class="wrapper-product">';
                                     echo '<img src="data:image/png;base64,' . base64_encode($row["product_image"]) . '"/>';
                                         echo '<div class="product-info">';
                                         echo "<input type='hidden' name='id_vin' value=".$row['id_vin']." />";
+                                        echo "<input type='hidden' name='form_token' value=". $form_token." />";
                                         echo '<input type="hidden" name="add" value="true"/>';
                                         echo '<span>' .  $row["denumire"] . '</span><br>';
                                         echo '<span>' .  $row["price"]. '<span> RON'  . '</div>';

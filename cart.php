@@ -9,6 +9,15 @@ include 'config.php';
 // 3 - rose
 // 4 - spumant
 if (isset($_POST['id_vin']) && isset($_POST['add'])) {
+
+    // only process requests once
+    if (isset($_SESSION['form_token'])
+        && $_POST['form_token'] == $_SESSION['form_token']) {
+        return;
+    }
+    // new request, save
+    $_SESSION['form_token'] = $_POST['form_token'];
+
     $id = $_POST['id_vin'];
     $query = "SELECT id_vin, product_image, denumire, price FROM wine where id_vin=$id";
     $result = $conn->query($query);
@@ -23,7 +32,9 @@ if (isset($_POST['id_vin']) && isset($_POST['add'])) {
 
     // initialize total with 0 if doesn't exist
     $total = $_SESSION['total'] ?? 0;
-    $total += $vin['price'];
+
+    $total = $total + $vin['price'];
+
     $_SESSION['total'] = $total;
     $found = false;
     // check for existing wine
@@ -31,12 +42,16 @@ if (isset($_POST['id_vin']) && isset($_POST['add'])) {
     if(isset($_SESSION['shopping_cart'])) {
         foreach($_SESSION['shopping_cart'] as &$item) {
             if($item['id_vin'] !== $vin['id_vin']) continue;
+            $item['qty']++;
+            $found = true;
         }
     }
     // when not found, add it to cart
     if(!$found) {
         $_SESSION['shopping_cart'][] = $cart_item;
     }
+    // go back
+    header('Location: ' . $_SERVER['HTTP_REFERER']);
 }
 
 if (isset($_POST['id_vin']) && isset($_POST['delete'])) {
@@ -46,9 +61,14 @@ if (isset($_POST['id_vin']) && isset($_POST['delete'])) {
     $vin = $result->fetch_assoc();
     // check for existing wine
     // decrement total
-    $_SESSION['total'] -= $vin['price'];
+    $subtractPrice = 0;
     foreach($_SESSION['shopping_cart'] as $key => $value) {
-        if($value['id_vin'] === $id) unset($_SESSION['shopping_cart'][$key]);
+        if($value['id_vin'] !== $id) continue;
+        // decrement price * qty
+        $subtractPrice = $vin['price'] * $value['qty'];
+        // delete from cart
+        unset($_SESSION['shopping_cart'][$key]);
     }
-
+    $_SESSION['total'] -= $subtractPrice;
+    header('Location: ' . $_SERVER['HTTP_REFERER']);
 }
