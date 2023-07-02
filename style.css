@@ -2087,6 +2087,10 @@ figure img {
     height: 50px;
 }
 
+.background-gray {
+    background-color: #111514;
+}
+
 .newsletter .btn-default {
     border: 1px solid #d9932f;
     border-radius: 0;
