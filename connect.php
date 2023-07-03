@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		if ($count == 1) {
 			$_SESSION['login_user'] = $email;
 			$_SESSION['login_user'] = $password;
-			header("location: index.html");
+			header("location: index.php");
 		} else {
 			$error = "Your Login Name or Password is invalid";
 			echo "Email/parola incorecta";
