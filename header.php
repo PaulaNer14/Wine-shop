@@ -191,16 +191,6 @@ include 'cart.php';
                                                 <li><a href="login.php">Login/Register</a></li>
                                             </ul>
                                         </li>
-                                        <li class="language">
-                                            <a href="#">
-                                                <img src="images/language.png" alt=""> EN <i
-                                                    class="fa fa-angle-down"></i>
-                                            </a>
-                                            <ul class="dropdown_language">
-                                                <li><a href="#">Engleza</a></li>
-                                                <li><a href="#">Romana</a></li>
-                                            </ul>
-                                        </li>
                                     </ul>
                              </div>
                         </div>
