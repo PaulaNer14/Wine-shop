@@ -107,20 +107,30 @@ button:active {
                     echo '<tr>';
                         echo '<div class="container">';
                             echo '<div class="row">';
-                            $form_token = uniqid();
                             while($row = $result->fetch_assoc()) {
                                 echo "<form method='post' action='cart.php'>";
                                 echo '<div class="col">';
                                     echo '<div class="wrapper-product">';
                                     echo '<img src="data:image/png;base64,' . base64_encode($row["product_image"]) . '"/>';
                                         echo '<div class="product-info">';
-                                        echo "<input type='hidden' name='id_vin' value=".$row['id_vin']." />";
-                                        echo "<input type='hidden' name='form_token' value=". $form_token." />";
-                                        echo '<input type="hidden" name="add" value="true"/>';
-                                        echo '<span>' .  $row["denumire"] . '</span><br>';
-                                        echo '<span>' .  $row["price"]. '<span> RON'  . '</div>';
-                                        echo '<button type="submit" class="add">Adaugă în coș</button>';
-                                        echo '<button class="add">❤</button>';
+                                            echo '<span>' .  $row["denumire"] . '</span><br>';
+                                            echo '<span>' .  $row["price"]. '<span> RON';
+                                        echo '</div>';
+                                        echo '<div class="wrapper-buttons" style="display: flex; margin-top: 5px">';
+                                            echo "<form method='post' action='cart.php'>";
+                                                echo "<input type='hidden' name='id_vin' value=".$row['id_vin']." />";
+                                                echo "<input type='hidden' name='form_token' value=". uniqid()." />";
+                                                echo '<input type="hidden" name="add" value="true"/>';
+                                                echo '<button type="submit" class="add">Adaugă în coș</button>';
+                                            echo "</form>";
+                                            echo "<form method='post' action='wishlist.php'>";
+                                                echo "<input type='hidden' name='id_vin' value=".$row['id_vin']." />";
+                                                echo "<input type='hidden' name='form_token' value=". uniqid()." />";
+                                                echo '<input type="hidden" name="add" value="true"/>';
+                                                echo '<button type="submit" class="add">❤</button>';
+                                            echo "</form>";
+                                        echo '</div>';
+
                                         echo '</div>';
                                     echo '</div>';
                                 echo '</div>';

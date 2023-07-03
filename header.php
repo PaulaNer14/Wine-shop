@@ -4,12 +4,10 @@ include 'cart.php';
     if(session_status() !== 2) {
         session_start();
     }
-    $cart = [];
-    $total = 0;
-    if(isset($_SESSION['shopping_cart'])){
-        $cart = $_SESSION['shopping_cart'];
-        $total = $_SESSION['total'];
-    }
+    $cart = $_SESSION['shopping_cart'] ?? [];
+    $total = $_SESSION['total'] ?? 0;
+    $wishList = $_SESSION['wish_list'] ?? [];
+
 ?>
 
 <!DOCTYPE html>
@@ -63,7 +61,17 @@ include 'cart.php';
                                             <a href="contact.php">Contact</a>
                                         </li>
                                         <li class="mega_items">
-                                            <a href="login.php">Login/Register</a>
+                                            <?php
+                                            if(isset($_SESSION['login_user'])) {
+                                                echo "<li><a>" . $_SESSION['login_user']['name'] . "</a></li>";
+                                                echo "<li><a href='logout.php'>Logout</a></li>";
+                                                if($_SESSION['login_user']['is_admin']) {
+                                                    echo "<li><a href='edit-vin.php'>Admin</a></li>";
+                                                }
+                                            } else {
+                                                echo "<li><a href='login.php'>Login/Register</a></li>";
+                                            }
+                                            ?>
                                          </li>
                                     </ul>
                                 </nav>
@@ -86,10 +94,40 @@ include 'cart.php';
                                                 </form>
                                             </div>
                                         </li>
-                                        <li class="header_wishlist">
+                                        <li class="mini_cart_wrapper">
                                             <a href="#">
                                                 <i class="fa fa-heart"></i>
                                             </a>
+                                            <div class="mini_cart mini_cart2">
+                                                <div class="cart_gallery">
+                                                    <?php
+                                                    foreach ($wishList as $item) {
+                                                        echo '<div class="cart_item">';
+                                                        echo '<div class="cart_img">';
+                                                        echo "<form method='post' action='wishlist.php'>";
+                                                        echo '<img src="data:image/png;base64,' . base64_encode($item["product_image"]) . '"/>';
+                                                        echo '</div>';
+                                                        echo '<div class="cart_info">';
+                                                        echo '<span> '. $item['denumire'] .' </span>';
+                                                        echo '</div>';
+                                                        echo '<input type="hidden" name="delete" value="true"/>';
+                                                        echo "<input type='hidden' name='id_vin' value=" . $item['id_vin'] . " />";
+                                                        echo '<div class="cart_remove">';
+                                                        echo '<button type="submit" class="delete">Șterge</button>';
+                                                        echo '</form>';
+                                                        echo '</div>';
+                                                        echo '</div>';
+                                                    }
+                                                    ?>
+                                                </div>
+                                                <div class="mini_cart_table">
+                                                    <div class="cart_table_border">
+                                                        <div class="cart_total mt-10">
+                                                            <?php if(!sizeof($wishList)) echo "<span class=\"price\">Nu ai niciun favorit :(</span>"?>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </li>
                                         <li class="mini_cart_wrapper">
                                             <a href="javascript:void(0)">
@@ -101,7 +139,7 @@ include 'cart.php';
                                                     foreach ($cart as $item) {
                                                         echo '<div class="cart_item">';
                                                             echo '<div class="cart_img">';
-                                                            echo "<form method='post' action=''>";
+                                                            echo "<form method='post' action='cart.php'>";
 //                                                            echo '<img src="images/cart1.png" alt="">';
                                                                 echo '<img src="data:image/png;base64,' . base64_encode($item["product_image"]) . '"/>';
                                                             echo '</div>';
@@ -133,7 +171,7 @@ include 'cart.php';
                                                 </div>
                                                 <div class="mini_cart_footer">
                                                     <div class="cart_button">
-                                                        <a href="#">Vezi cosul</a>
+                                                        <a href="checkout.php">Vezi cosul</a>
                                                     </div>            
                                                 </div>
                                             </div>
@@ -272,7 +310,14 @@ include 'cart.php';
                     </li>
                  </ul>
                 <ul class="sub-menu">
-                            <li><a href='login.php'>Login/Register</a></li>
+                            <?php if($_SESSION['login_user']) {
+                                echo "<li><a>" . $_SESSION['login_user']['name'] . "</a></li>";
+                                echo "<li><a href='logout.php'>Logout</a></li>";
+                            } else {
+                                var_dump('else');
+                                echo "<li><a href='login.php'>Login/Register</a></li>";
+                            }
+                            ?>
                         </ul>
                 
             </div>

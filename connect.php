@@ -1,18 +1,22 @@
 <?php
-if(isset($_SESSION['email'])){
+
+if(isset($_SESSION['login_user'])){
 	header("Location: index.php");
 }
+session_unset();
+session_destroy();
+session_start();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$email = $_POST['email'];
 	$password = $_POST['password'];
 	if (empty($email) || empty($password)) {
 		echo "Nu lasa campuri goale";
 	} else {
-		$servername = "localhost";
-		$username = "root";
-		$password = "";
-		$dbname = "web";
-		$conn = new mysqli($servername, $username, $password, $dbname);
+		$db_servername = "localhost";
+		$db_username = "root";
+		$db_password = "";
+		$db_name = "web";
+		$conn = new mysqli($db_servername, $db_username, $db_password, $db_name);
 
 		if ($conn->connect_error) {
 			die("Connection failed: " . $conn->connect_error);
@@ -26,8 +30,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		// If result matched $myusername and $mypassword, table row must be 1 row
 
 		if ($count == 1) {
-			$_SESSION['login_user'] = $email;
-			$_SESSION['login_user'] = $password;
+			$_SESSION['login_user'] = [
+                'id' => $row['id_client'],
+                'is_admin' => $row['admin'],
+                'name' => $row['lastName']
+            ];
 			header("location: index.php");
 		} else {
 			$error = "Your Login Name or Password is invalid";
