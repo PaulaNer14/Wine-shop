@@ -77,29 +77,6 @@ $options = [
         </table>
         </div>
     </section>
-    <section class="newsletter-bg">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-sm-6">
-                    <div class="dart-headingstyle-one t-mb-20 text-left t-pt-40 t-pb-30">
-                        <h2 class="dart-heading">Newsletter</h2>
-                        <p>Inregistreaza-te la newsletter-ul nostru si vrei primi 20% reducere la urmatoarea comanda</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-sm-6">
-                    <form action="#" class="form-inline">
-                        <div class="newsletter t-pt-70 t-pb-30">
-                            <div class="form-group">
-                                <input type="email" class="form-control" placeholder="Email...">
-                            </div>
-                            <button type="submit" class="btn btn-default">Aboneaza-te<i
-                                    class="fa fa-envelope"></i></button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
     <script src="Dependencies/jquery.min.js"></script>
     <script src="Dependencies/jquery.easing.min.js"></script>
     <script src="Dependencies/bootstrap.min.js"></script>
@@ -107,7 +84,4 @@ $options = [
     <script src="Dependencies/owl.carousel.min.js"></script>
     <script src="main.js"></script>
 </body>
-<?php
-    include_once 'footer.php';
-?>
 </html>

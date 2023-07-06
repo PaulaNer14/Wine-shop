@@ -7,5 +7,5 @@ if(isset($_SESSION['login_user'])){
     session_destroy();
 }
 // go back
-header('Location: ' . $_SERVER['HTTP_REFERER']);
+header("Location: index.php");
 ?>

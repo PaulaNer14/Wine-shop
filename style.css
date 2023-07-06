@@ -1491,12 +1491,10 @@ section {
     padding: 50px 0;
 }
 
-/* .category-img .poze {
-    margin-bottom: 85px;
-    width: 100px;
-    height: 100px;
-    align-items: center;
-} */
+.category-img .poze {
+    display: flex;
+    justify-content: center;
+} 
 
 
 
@@ -1511,7 +1509,9 @@ section {
 }
 
 .category-img .cat-link a {
-    display: inline-block;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
     font-weight: normal;
     color: #ffffff;
 }

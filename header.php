@@ -64,7 +64,7 @@ include 'cart.php';
                                             <?php
                                             if(isset($_SESSION['login_user'])) {
                                                 echo "<li><a>" . $_SESSION['login_user']['name'] . "</a></li>";
-                                                echo "<li><a href='logout.php'>Logout</a></li>";
+                                                echo "<li><a href='index.php'>Logout</a></li>";
                                                 if($_SESSION['login_user']['is_admin']) {
                                                     echo "<li><a href='edit-vin.php'>Admin</a></li>";
                                                 }
@@ -86,7 +86,7 @@ include 'cart.php';
                                                 <i class="fa fa-search"></i>
                                             </a>
                                             <div class="search_widget">
-                                                <form action="#">
+                                                <form action="vin.php?tip_vin=1">
                                                     <input type="text" placeholder="Cauta vinul tau...">
                                                     <button type="submit">
                                                         <i class="fa fa-search"></i>
@@ -109,6 +109,7 @@ include 'cart.php';
                                                         echo '</div>';
                                                         echo '<div class="cart_info">';
                                                         echo '<span> '. $item['denumire'] .' </span>';
+                                                        echo '<span> '. $item['price'] .' </span> RON';
                                                         echo '</div>';
                                                         echo '<input type="hidden" name="delete" value="true"/>';
                                                         echo "<input type='hidden' name='id_vin' value=" . $item['id_vin'] . " />";
@@ -159,10 +160,6 @@ include 'cart.php';
                                                 </div>
                                                 <div class="mini_cart_table">
                                                     <div class="cart_table_border">
-<!--                                                        <div class="cart_total">-->
-<!--                                                            <span>Sub Total :</span>-->
-<!--                                                            <span class="price">RON 40</span>-->
-<!--                                                        </div>-->
                                                         <div class="cart_total mt-10">
                                                             <span>Total :</span>
                                                             <?php echo "<span class=\"price\">RON $total</span>"?>
@@ -185,8 +182,8 @@ include 'cart.php';
                                                 <i class="fa fa-cog"></i>
                                             </a>
                                             <ul class="dropdown_links">
-                                                <li><a href="#">Contul meu</a></li>
-                                                <li><a href="#">Cos de cumparaturi</a></li>
+                                                <li><a href="index.php">Contul meu</a></li>
+                                                <li><a href="checkout.php">Cos de cumparaturi</a></li>
                                                 <li><a href="#">Ador</a></li>
                                                 <li><a href="login.php">Login/Register</a></li>
                                             </ul>
@@ -222,8 +219,8 @@ include 'cart.php';
                             Contul meu <i class="fa fa-angle-down"></i>
                         </a>
                         <ul class="dropdown_links">
-                            <li><a href="#">Contul meu</a></li>
-                            <li><a href="#">Cos de cumparaturi</a></li>
+                            <li><a href="index.php">Contul meu</a></li>
+                            <li><a href="checkout.php">Cos de cumparaturi</a></li>
                             <li><a href="#">Wishlist</a></li>
                             <li><a href="login.php">Login/Register</a></li>
                         </ul>
@@ -248,7 +245,7 @@ include 'cart.php';
                     <li class="header_wishlist">
                         <a href="#">
                             <i class="fa fa-heart"></i>
-                            <span class="item_count">3</span>
+                            <span class="item_count"></span>
                         </a>
                     </li>
                     <li class="mini_cart_wrapper">
@@ -319,18 +316,14 @@ include 'cart.php';
                             }
                             ?>
                         </ul>
-                
             </div>
-
             <div class="offcanvas_footer">
-                <span><a href="#"><i class="fa fa-envelope"></i> wine@gmail.com</a></span>
-                <ul>
-                    <li class="facebook">
-                        <a href="#">
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                    </li>
-                </ul>
+            <span><a href="#"><i class="fa fa-envelope"></i> wine@gmail.com</a></span>
+                            <div class="footer_icon">
+                                <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
+                                <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                                <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
+                            </div>
             </div>
         </div>
     </div>

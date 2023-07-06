@@ -24,6 +24,11 @@
     <link rel="stylesheet" href="style.css">
 
     <style>
+        .product-info {
+            font-size: 19px;
+            font-weight: bold;
+        }
+
         button {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   font-size: 17px;
@@ -69,6 +74,10 @@
 button:hover .transition {
   width: 14em;
   height: 14em;
+}
+
+button:hover{
+    color: #cc9900;
 }
 
 button:active {

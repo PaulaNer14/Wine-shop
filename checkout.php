@@ -71,7 +71,7 @@ if(isset($_POST['order'])) {
         <div class="container">
             <div class="py-5 text-center">
                 <h2>Checkout</h2>
-                <p class="lead">Text text</p>
+                <p class="lead">Date plasare comanda</p>
             </div>
             <div class="row">
                 <div class="col-md-4 order-md-2 mb-4">
@@ -97,7 +97,7 @@ if(isset($_POST['order'])) {
                     </ul>
                 </div>
                 <div class="col-md-8 order-md-1">
-                    <h4 class="mb-3">Billing address</h4>
+                    <h4 class="mb-3">Adresa facturare</h4>
                     <form class="needs-validation" method="post" action="">
                         <div class="row">
                             <?php if(isset($_SESSION['login_user'])) {
